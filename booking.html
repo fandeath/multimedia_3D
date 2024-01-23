@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Бронювання</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Бронювання квитків</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Домашня</a></li>
+                <li><a href="events.html">Заходи</a></li>
+                <li><a href="booking.html">Бронювання</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="booking-form">
+            <div class="event-info">
+                <img src="/images/Beatles.png" alt="Зображення заходу">
+                <h2>Музичний концерт гурту the Beatles в Києві</h2>
+                <p>Ціна квитка: <span class="price">1 500 грн</span></p>
+            </div>
+                      
+            <form>
+                <label for="ticket-quantity">Кількість квитків:</label>
+                <input type="number" id="ticket-quantity" name="quantity" min="1" value="1">
+                <p>Загальна вартість: <span class="total-price"></span></p>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const pricePerTicket = 1500; // Ціна одного квитка
+                        const quantityInput = document.getElementById('ticket-quantity');
+                        const totalPriceElement = document.querySelector('.total-price');
+                
+                        function updateTotalPrice() {
+                            const quantity = quantityInput.value;
+                            const totalPrice = quantity * pricePerTicket;
+                            totalPriceElement.textContent = `${totalPrice} грн`;
+                        }
+                
+                        quantityInput.addEventListener('change', updateTotalPrice);
+                
+                        // Оновлення при ініціалізації
+                        updateTotalPrice();
+                    });
+                </script>
+                <label for="customer-name">Ім'я:</label>
+                <input type="text" id="customer-name" name="name" required>
+
+                <label for="customer-phone">Телефон:</label>
+                <input type="tel" id="customer-phone" name="phone" required>
+
+                <label for="customer-email">Електронна пошта:</label>
+                <input type="email" id="customer-email" name="email" required>
+
+                <a href="success.html" class="details-button">Забронювати</a>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Рекомендаційна веб-система для пошуку заходів</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашня сторінка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--<script src="https://unpkg.com/three@latest/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@latest/examples/js/loaders/GLTFLoader.js"></script> -->
+    <script src="teddy.js"></script>
+
+    <header>
+        <h1>Рекомендаційна веб-система для пошуку заходів</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Домашня</a></li>
+                <li><a href="events.html">Заходи</a></li>
+                <li><a href="booking.html">Бронювання</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="main_section">
+            <img src="/images/main.jpg" alt="Головне зображення">
+            <h2>Знайдемо квитки на концерти, вистави та виставки за допомогою віртуального асистента Тенні.</h2>
+            <p>Наша інноваційна веб-система пошуку та бронювання заходів - це ваш надійний помічник у світі культурних подій. Чи то концерти, виставки або вистави, ми пропонуємо безпрецедентний досвід взаємодії з віртуальним голосовим асистентом. Наша система враховує ваші індивідуальні інтереси та запити, надаючи персоналізовані рекомендації та інформацію про найближчі заходи.</p>
+            <p>Використовуючи передові технології, віртуальний асистент дозволяє швидко знаходити інформацію, бронювати квитки та навіть отримувати напрямки до місця події - все за допомогою простих голосових команд. Це не тільки економить ваш час, а й забезпечує новий рівень зручності та доступності. Будь то планування вечора з друзями чи відвідування культурного заходу у вихідні, наша система зробить ваш досвід незабутнім.</p>
+       </section>
+        <div id="teddy-container"></div>
+        
+        <script type="module">
+        import * as THREE from 'three';
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+        
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );
+        </script>
+       
+    </main>
+    <footer>
+        <p>© 2024 Рекомендаційна веб-система для пошуку заходів</p>
+    </footer>
+</body>
+</html>
